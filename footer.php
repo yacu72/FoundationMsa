@@ -11,6 +11,22 @@
 
 <footer class="footer">
     <div class="footer-container">
+
+      <section class="section-3">
+        <div class="section-inner grid-x grid-margin-x">
+
+        <div class="section-column cell medium-4">
+        </div>
+
+        <div class="section-column cell medium-4">
+        </div>
+
+        <div class="section-column cell medium-4">
+        </div>
+
+        </div>
+      </section>
+    
         <div class="footer-grid">
             <?php dynamic_sidebar( 'footer-widgets' ); ?>
         </div>
@@ -27,7 +43,7 @@
 $(function() {
   $(window).scroll(function() {
     var winTop = $(window).scrollTop();
-    if (winTop >= 40) {
+    if (winTop >= 80) {
       $("body").addClass("sticky-shrinknav-wrapper");
     } else{
       $("body").removeClass("sticky-shrinknav-wrapper");

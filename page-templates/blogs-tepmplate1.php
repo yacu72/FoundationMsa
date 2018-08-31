@@ -5,6 +5,21 @@ Template Name: Blogs Template 1
 
 get_header(); ?>
 
+<header class="main-header" role="banner">
+	<div class="header-inner grid-x">
+
+		<div class="site-logo-img cell medium-3">
+			<a href=""></a>
+		</div>
+	
+		<nav class=" cell medium-9 show-for-medium">
+			<?php foundationpress_sec_nav(); ?>
+		</nav>				
+
+	</div>
+
+</header>
+
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 <div class="main-container">
 	<div class="news-wrapper">
