@@ -1,9 +1,12 @@
 <?php
 /**
-Template Name: Blogs Template 1
+ *Template Name: Blogs Template 1
  */
+ ?>
 
-get_header(); ?>
+
+
+<?php get_header(); ?>
 
 <header class="main-header" role="banner">
 	<div class="header-inner grid-x">
@@ -11,62 +14,73 @@ get_header(); ?>
 		<div class="site-logo-img cell medium-3">
 			<a href=""></a>
 		</div>
-	
+
 		<nav class=" cell medium-9 show-for-medium">
 			<?php foundationpress_sec_nav(); ?>
-		</nav>				
+		</nav>
 
 	</div>
 
 </header>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+<!--<?php get_template_part( 'template-parts/featured-image' ); ?>-->
 <div class="main-container">
 	<div class="news-wrapper">
 		<main class="main-content">
 
-		<h1>MSA News</h1>
-
 		<section class="featured-blog">
 			<div class="slides wrap grid-padding-x">
 
-				<div class="item item-large">
-					<a href="">
-						<img src="https://unsplash.it/301/?random">
-					</a>
-					<div class="overlay">
-						<div class="post-meta">
-							<h2 class="heading">Romanian New Programs</h2>
-							<span class="post-author">Shae One</span>
-							<span class="meta-sep"></span>
-							<span class="meta-date">August 14, 2009</span>
-						</div>
-					</div>
-				</div>
+        <?php
 
-				<div class="item item-small">
-					<img src="https://unsplash.it/302/?random">
-					<div class="overlay">
-						<div class="post-meta">
-							<h2 class="heading">Romanian New Programs</h2>
-							<span class="post-author">Shae One</span>
-							<span class="meta-sep"></span>
-							<span class="meta-date">August 14, 2009</span>
-						</div>
-					</div>
-				</div>
+        $args = array(
+       	 'post-type' => 'post',
+       	 'tag' => 'romania',
+       	 'posts_per_page' => '3'
+        );
 
-				<div class="item item-small">
-					<img src="https://unsplash.it/303/?random">
-					<div class="overlay">
-						<div class="post-meta">
-							<h2 class="heading">Romanian New Programs</h2>
-							<span class="post-author">Shae One</span>
-							<span class="meta-sep"></span>
-							<span class="meta-date">August 14, 2009</span>
-						</div>
-					</div>
-				</div>	
+       $loop_romania = new WP_Query( $args );
+       $i = 0;
+
+         while ( $loop_romania->have_posts() ) : $loop_romania->the_post();
+           if ( $i == 0 ){ ?>
+
+             <div class="item item-large">
+               <a href="<?php the_permalink(); ?>">
+                 <?php the_post_thumbnail(); ?>
+               </a>
+               <div class="overlay">
+                 <div class="post-meta">
+                   <h2 class="heading"><?php the_title(); ?></h2>
+                   <span class="post-author"><?php the_author(); ?></span>
+                   <span class="meta-sep"></span>
+                   <span class="meta-date"><?php the_date(); ?></span>
+                 </div>
+               </div>
+             </div>
+
+           <?php } else { ?>
+
+             <div class="item item-small">
+               <a href="<?php the_permalink(); ?>">
+                 <?php the_post_thumbnail(); ?>
+               </a>
+               <div class="overlay">
+                 <div class="post-meta">
+                   <h2 class="heading"><?php the_title(); ?></h2>
+                   <span class="post-author"><?php the_author(); ?></span>
+                   <span class="meta-sep"></span>
+                   <span class="meta-date"><?php the_date(); ?></span>
+                 </div>
+               </div>
+             </div>
+
+           <?php }
+           $i++;
+
+         endwhile;
+
+        ?>
 
 			</div>
 
@@ -150,7 +164,7 @@ get_header(); ?>
 			<div class="section-content cell text-center">
 				<span class="h3">September Registration Call, limited seats.</span> <a class="button large round">Apply Now</a>
 			</div>
-		</section>	
+		</section>
 
 
 		<section class="grid-x grid-margin-x">
@@ -206,7 +220,7 @@ get_header(); ?>
 								<p>More off this less hello salamander lied porpoise much over tightly circa horse taped so innocuously outside crud mightily rigorous…</p>
 							</div>
 						</article>
-					</div>					
+					</div>
 
 				</div>
 
@@ -237,7 +251,7 @@ get_header(); ?>
 							</div>
 							<span class="label">Cluj Med School</span>
 						</a>
-					</div>					
+					</div>
 
 				</div>
 
@@ -245,7 +259,7 @@ get_header(); ?>
 					<h4 class="title">
 						Follow Us
 					</h4>
-				</div>	
+				</div>
 
 				<div class="social-icons">
 					<a class="social-link" href="">
@@ -254,10 +268,10 @@ get_header(); ?>
 					<a class="social-link" href="">
 						<i class="fa fa-twitter"></i>
 					</a>
-				</div>			
-				
+				</div>
+
 			</div>
-		</section>	
+		</section>
 
 			<!--<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>

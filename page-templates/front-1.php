@@ -15,93 +15,75 @@ Template Name: Front 1
 			<div class="site-logo-img cell medium-3">
 				<a href=""></a>
 			</div>
-		
+
 			<nav class=" cell medium-9 show-for-medium">
 				<?php foundationpress_sec_nav(); ?>
-			</nav>				
+			</nav>
 
 		</div>
 
 	</header>
 
 	<section class="section-1 ">
-	<div class="grid-container">
-		<div class="front-hero-inner grid-x grid-margin-x">
+		<div class="grid-container">
+			<div class="front-hero-inner grid-x grid-margin-x">
 
-			<div class="section-column cell medium-9">
-				<p>We are a dependable professional services consultancy, providing reliable services to international medical students looking for accessible study abroad opportunities.</p>
+				<div class="intro section-column cell medium-8">
+					<p>We're transparent and community driven. We believe the students we work with, are uplifting the world and connecting cultures.</p>
+				</div>
+				<div class="action-wrapper section-column cell medium-4">
+					<a href="" class="button large round">Apply Now!</a>
+				</div>
 			</div>
-			<div class="section-column cell medium-3">
-				Apply button
-			</div>			
 		</div>
-	</div>
 	</section>
 
 	<section class="section-4">
 		<div class="section-inner grid-x">
 
-			<div class="section-column cell medium-12">
-				About Us
+			<div class="section-column cell medium-8">
+				<?php get_template_part( 'template-parts/product-feature-section' ); ?>
+			</div>
+
+			<div class="section-column cell medium-4">
+				<?php get_template_part( 'template-parts/testimonial-slider' ); ?>
 			</div>
 
 		</div>
-	</section>	
+	</section>
 
 	<section class="section-2">
 		<div class="section-inner grid-x grid-margin-x">
 
-			<div class="section-column cell medium-8 grid-x grid-margin-x">
+			<div class="section-column cell medium-12 grid-x grid-margin-x">
 
-				<div class="cell medium-12">
-					blog featured
-				</div>			
-
-				<div class="cell medium-6">
-					blog item
-				</div>
-
-				<div class="cell medium-6">
-					blog item
-				</div>				
+				<?php get_template_part( 'template-parts/featured-blog-posts'); ?>
 
 			</div>
 
-			<div class="section-column cell medium-4">
-				
-				<div class="cell medium-12">
-					Top Schools
-				</div>
-
-				<div class="cell medium-12">
-					Social Links
-				</div>
-
-			</div>			
-
 		</div>
-	</section>	
+	</section>
 
 	<section class="section-3">
 		<div class="section-inner grid-x grid-margin-x">
 
-		<div class="section-column cell medium-4">
-			Med Schools
-		</div>
-
-		<div class="section-column cell medium-4">
-		 Med Programs
-		</div>
-
-		<div class="section-column cell medium-4">
-			Apply Now
+		<div class="section-column cell">
+			<?php get_template_part( 'template-parts/blocks/featured-testimonials-1'); ?>
 		</div>
 
 		</div>
-	</section>	
+	</section>
+
+	<section class="section-4">
+		<div class="section-inner grid-x grid-margin-x">
+			<div class="section-column cell">
+				<?php get_template_part( 'template-parts/blocks/vertical-testimonial'); ?>
+			</div>
+		</div>
+	</section>
 
 	<div class="main-container">
-	</div>	
+	</div>
 
 
 
