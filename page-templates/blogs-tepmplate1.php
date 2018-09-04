@@ -51,7 +51,7 @@
                </a>
                <div class="overlay">
                  <div class="post-meta">
-                   <h2 class="heading"><?php the_title(); ?></h2>
+                   <h2 class="heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                    <span class="post-author"><?php the_author(); ?></span>
                    <span class="meta-sep"></span>
                    <span class="meta-date"><?php the_date(); ?></span>
@@ -67,7 +67,7 @@
                </a>
                <div class="overlay">
                  <div class="post-meta">
-                   <h2 class="heading"><?php the_title(); ?></h2>
+                   <h2 class="heading"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                    <span class="post-author"><?php the_author(); ?></span>
                    <span class="meta-sep"></span>
                    <span class="meta-date"><?php the_date(); ?></span>
