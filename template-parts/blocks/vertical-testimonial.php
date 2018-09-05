@@ -1,12 +1,29 @@
+
+<?php
+
+	$args = array(
+		'post_type' => 'testimonial',
+		'posts_per_page' => '1',
+    'orderby'        => 'rand',
+	);
+
+
+	$query = new WP_Query( $args );
+
+	while ( $query->have_posts() ) : $query->the_post();
+
+?>
+
 <div class="testimonial-block-vertical">
   <div class="testimonial-block-vertical-quote">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices, elit sed faucibus pharetra, diam mauris bibendum orci, sit amet ullamcorper purus dui sit amet augue. Donec aliquet diam ut neque mattis, eu tristique sem rutrum.</p>
+    <?php the_content(); ?>
   </div>
   <div class="testimonial-block-vertical-person">
-    <img class="testimonial-block-vertical-avatar" src="https://placehold.it/60" alt="" />
+    <?php the_post_thumbnail('thumbnail'); ?>
     <div>
-      <p class="testimonial-block-vertical-name">John Doe</p>
-      <p class="testimonial-block-vertical-info">Important person, some Company</p>
+      <p class="testimonial-block-vertical-name"><?php the_title(); ?></p>
     </div>
   </div>
 </div>
+
+<?php endwhile; ?>

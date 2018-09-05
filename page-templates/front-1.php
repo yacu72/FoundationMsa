@@ -3,6 +3,7 @@
 Template Name: Front 1
 */
 ?>
+
 <?php get_header(''); ?>
 
 
@@ -42,11 +43,11 @@ Template Name: Front 1
 		<div class="section-inner grid-x">
 
 			<div class="section-column cell medium-8">
-				<?php get_template_part( 'template-parts/product-feature-section' ); ?>
+				<?php get_template_part( 'template-parts/blocks/product-feature-section' ); ?>
 			</div>
 
 			<div class="section-column cell medium-4">
-				<?php get_template_part( 'template-parts/testimonial-slider' ); ?>
+				<?php get_template_part( 'template-parts/blocks/testimonial-slider' ); ?>
 			</div>
 
 		</div>
@@ -57,7 +58,7 @@ Template Name: Front 1
 
 			<div class="section-column cell medium-12 grid-x grid-margin-x">
 
-				<?php get_template_part( 'template-parts/featured-blog-posts'); ?>
+				<?php get_template_part( 'template-parts/blocks/featured-blog-posts'); ?>
 
 			</div>
 

@@ -4,6 +4,11 @@
  */
  ?>
 
+ <?php
+  $term_link = get_tag_link( 7 );// Romania
+  //print_r($term_link);
+ ?>
+
 
 
 <?php get_header(); ?>
