@@ -15,9 +15,9 @@ Template Name: Front
 			</div>
 			<div class="medium-6 section-contents">
 
-				<h2 class="title">Our Service</h2>
+				<h2 class="title">Our Services</h2>
 				<p>Acting as an important intermediary with the educational institute.</p>
-				<a href="" class="button">Apply Now!</a>
+				<a href="" class="button">View All...</a>
 
 			</div>
 		</div>
