@@ -47,5 +47,4 @@
 				<?php endif; ?>
 			</div>
 		</nav>
-hola
 	</header>

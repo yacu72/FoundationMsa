@@ -12,9 +12,30 @@ register_nav_menus(
 		'top-bar-r'  => esc_html__( 'Right Top Bar', 'foundationpress' ),
 		'mobile-nav' => esc_html__( 'Mobile', 'foundationpress' ),
 		'sec-nav' => esc_html__( 'Secondary Nav', 'foundationpress' ),
+		'footer-nav' => esc_html__( 'Footer Nav', 'foundationpress'),
 	)
 );
 
+/**
+ * Desktop navigation - footer
+ *
+ * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
+ */
+if ( ! function_exists( 'foundationpress_footer_nav' ) ) {
+	function foundationpress_footer_nav() {
+		wp_nav_menu(
+			array(
+				'container'      => false,
+				'menu_class'     => 'dropdown menu',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s footer-menu" data-dropdown-menu>%3$s</ul>',
+				'theme_location' => 'footer-nav',
+				'depth'          => 3,
+				'fallback_cb'    => false,
+				'walker'         => new Foundationpress_Top_Bar_Walker(),
+			)
+		);
+	}
+}
 
 /**
  * Desktop navigation - right top bar
