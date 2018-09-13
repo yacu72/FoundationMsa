@@ -31,7 +31,7 @@ Template Name: Front
 
 				<div class="cell small-12 medium-6">
 					<h4><i class="fa fa-graduation-cap"></i>Romanian Universities</h4>
-					<a href="" class="more"><i class="fa fa-angle-right"></i></a>
+					<a href="romanian-universities/" class="more"><i class="fa fa-angle-right"></i></a>
 				</div>
 
 				<div class="cell small-12 medium-6">
