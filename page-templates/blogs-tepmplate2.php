@@ -102,7 +102,7 @@
            <article class="cell medium-4 blog-item">
              <?php //the_post_thumbnail(); ?>
              <img src="https://picsum.photos/350/150/?random" alt="">
-             <h4 class="title"><a href="<?php  ?>"><?php the_title(); ?></a></h4>
+             <h4 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
              <div class="postmeta">
                By: <span class="post-author"><?php the_author(); ?></span>
              </div>
