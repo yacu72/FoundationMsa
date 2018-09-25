@@ -62,22 +62,7 @@ get_header('front'); ?>
 
 		</main>
 		<aside class="sidebar">
-			<section class="widget widget_tag_cloud">
-				<h6>Topics</h6>
-				<div class="tagcloud">
-					<ul>
-					<?php
-						$topics = get_terms( array(
-							'taxonomy' => 'topic',
-							'hide_empty' => false,
-						));
-
-						foreach($topics as $topic) { ?>
-							<li> <a href="/topic/<?php echo $topic->slug; ?>"><?php echo $topic->name; ?></a> </li>
-					<?php	}	?>
-				</ul>
-				</div>
-			</section>
+			<?php get_template_part( 'template-parts/blocks/faq-topics-widget'); ?>
 		</aside>
 		<?php //get_sidebar(); ?>
 
