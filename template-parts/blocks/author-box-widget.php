@@ -3,7 +3,9 @@
  <?php if(function_exists('get_avatar')) { echo get_avatar( get_the_author_meta('email'), '100' ); } ?>
  </span>
 
+<h4>Author Details</h4>
 <h5 class="vcard author" itemprop="url" rel="author">
+
  <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" class="fn" itemprop="name">
  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
  <?php the_author_meta( 'display_name' ); ?>
