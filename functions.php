@@ -53,5 +53,8 @@ require_once( 'library/responsive-images.php' );
 
 require_once( 'library/edu-pagination.php' );
 
+/** Add MSA custom theme support **/
+require_once( 'library/msa-theme-support.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );

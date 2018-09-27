@@ -58,38 +58,43 @@ Template Name: Front
 	</section>
 
 	<section class="msa-testimonials">
-		<div class="grid-container grid-x">
+		<div class="testimonials grid-container grid-x">
 			<h2>
 				<span>Hundreds of Happy Students Served </span>
 				Testimonials
 			</h2>
 
-			<div class="cell medium-4">
-				<div class="quotblock">
-					<img src="http://themetrademark.com/demo/edumart/wp-content/uploads/2017/08/testi-img1.jpg" alt="">
-					<span class="quote-icon"></span>
-					<h4>John Lupez</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and simply dummy text of the typesetting industry. simply dummy text of theLorem Ipsum hasdummy text of the typesetting.Lorem Ipsum is simply dummy text of the printing and simply dummy text of the typesetting industry. simply dummy text of the</p>
-				</div>
-			</div>
+			<?php
 
-			<div class="cell medium-4">
-				<div class="quotblock">
-					<img src="http://themetrademark.com/demo/edumart/wp-content/uploads/2017/08/testi-img1.jpg" alt="">
-					<span class="quote-icon"></span>
-					<h4>John Lupez</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and simply dummy text of the typesetting industry. simply dummy text of theLorem Ipsum hasdummy text of the typesetting.Lorem Ipsum is simply dummy text of the printing and simply dummy text of the typesetting industry. simply dummy text of the</p>
-				</div>
-			</div>
+			global $wpdb;
 
-			<div class="cell medium-4">
-				<div class="quotblock">
-					<img src="http://themetrademark.com/demo/edumart/wp-content/uploads/2017/08/testi-img1.jpg" alt="">
-					<span class="quote-icon"></span>
-					<h4>John Lupez</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and simply dummy text of the typesetting industry. simply dummy text of theLorem Ipsum hasdummy text of the typesetting.Lorem Ipsum is simply dummy text of the printing and simply dummy text of the typesetting industry. simply dummy text of the</p>
+			$args = array(
+				'post_type' => 'testimonial',
+				'orderby' => 'rand',
+				'posts_per_page' => 3,
+				'meta_query' => array(
+					array(
+					 'key' => '_thumbnail_id',
+					 'compare' => 'EXISTS',
+				 )),
+			);
+
+			$query = new WP_Query( $args );
+
+			if( $query->have_posts() ) :
+
+				while ( $query->have_posts() )  : $query->the_post();	?>
+
+				<div class="cell medium-4">
+					<div class="quotblock">
+						<?php the_post_thumbnail('thumbnail'); ?>
+						<span class="quote-icon"></span>
+						<h4><?php the_title(); ?></h4>
+						<?php the_excerpt(); ?>
+					</div>
 				</div>
-			</div>
+
+			<?php endwhile; endif; wp_reset_postdata(); ?>
 
 		</div>
 	</section>
@@ -101,90 +106,39 @@ Template Name: Front
 				News and Articles
 			</h2>
 			<div class="new-wrapper grid-margin-x grid-x">
-				<div class="cell medium-4">
-					<div class="inner">
-						<figure>
-							<img src="http://themetrademark.com/demo/edumart/wp-content/uploads/2017/08/blog-detail-img.jpg" alt="">
-							<figcaption>
-								<div class="cnt-block">
-									<a href="" class="plus-icon">+</a>
-									<h3>Lorem Ipsum is simply dummy</h3>
-									<div  class="bottom-block clearfix">
-										<date>
-											<div class="icon">
-												<i aria-hidden="true" class="fa fa-calendar"></i>
-											</div>
-											<span>4 August</span>
-											2018
-										</date>
-										<div class="comment">
-											<div class="icon">
-												<span class="fa fa-comment"></span>
-											</div>
-										<a href="">comments</a>
-									</div>
-								</div>
-							</div>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<div class="cell medium-4">
-					<div class="inner">
-						<figure>
-							<img src="http://themetrademark.com/demo/edumart/wp-content/uploads/2017/08/blog-detail-img.jpg" alt="">
-							<figcaption>
-								<div class="cnt-block">
-									<a href="" class="plus-icon">+</a>
-									<h3>Lorem Ipsum is simply dummy</h3>
-									<div  class="bottom-block clearfix">
-										<date>
-											<div class="icon">
-												<i aria-hidden="true" class="fa fa-calendar"></i>
-											</div>
-											<span>4 August</span>
-											2018
-										</date>
-										<div class="comment">
-											<div class="icon">
-												<span class="fa fa-comment"></span>
-											</div>
-										<a href="">comments</a>
-									</div>
-								</div>
-							</div>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<div class="cell medium-4">
-					<div class="inner">
-						<figure>
-							<img src="http://themetrademark.com/demo/edumart/wp-content/uploads/2017/08/blog-detail-img.jpg" alt="">
-							<figcaption>
-								<div class="cnt-block">
-									<a href="" class="plus-icon">+</a>
-									<h3>Lorem Ipsum is simply dummy</h3>
-									<div  class="bottom-block clearfix">
-										<date>
-											<div class="icon">
-												<i aria-hidden="true" class="fa fa-calendar"></i>
-											</div>
-											<span>4 August</span>
-											2018
-										</date>
-										<div class="comment">
-											<div class="icon">
-												<span class="fa fa-comment"></span>
-											</div>
-										<a href="">comments</a>
-									</div>
-								</div>
-							</div>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
+
+				<?php
+					$paged_listing = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+					$args_listing = array(
+						'post_type' => 'post',
+						'posts_per_page' => 3,
+						'offset' => 1,
+						'order' => 'DESC',
+						'paged' => $paged_listing,
+					);
+
+					$loop_listing = new WP_Query( $args_listing );
+
+					while($loop_listing->have_posts()): $loop_listing->the_post();
+				 ?>
+
+				 <article class="cell medium-4 blog-item">
+					 <?php the_post_thumbnail('post_grid'); ?>
+					 <!--<img src="https://picsum.photos/350/150/?random" alt="">-->
+					 <h4 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+					 <div class="postmeta">
+						 By: <span class="post-author"><?php the_author(); ?></span>
+					 </div>
+					 <div class="post-content">
+						 <?php the_excerpt(); ?>
+					 </div>
+				 </article>
+
+			 <?php
+				endwhile;
+				wp_reset_query();
+			 ?>
+
 			</div><!--new wrapper-->
 		</div>
 	</section>

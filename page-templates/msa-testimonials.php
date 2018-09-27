@@ -12,13 +12,14 @@
 		<main class="main-content">
 
       <div class="testimonials grid-container">
-        <div class="testimonial-inner grid-x">
+        <div class="testimonials testimonial-inner grid-x">
 
           <?php
             global $wpdb;
 
             $args = array(
               'post_type' => 'testimonial',
+              'posts_per_page' => 60,
               'meta_query' => array(
                 array(
                  'key' => '_thumbnail_id',
