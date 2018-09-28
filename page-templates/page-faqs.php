@@ -5,13 +5,16 @@
 
 get_header('front'); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+<div class="page-head section-header page-head-faq">
+	<span class="sub-title">We are glad to respond your questions</span>
+	<h3 class="title"><?php the_title(); ?></h3>
+</div>
+
 <div class="main-container">
 	<div class="main-grid">
 		<main class="main-content">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php //get_template_part( 'template-parts/content', 'page' ); ?>
-				<h2><?php the_title(); ?></h2>
 			<?php endwhile; ?>
 				<ul class="accordion" data-allow-all-closed="true" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" id="deeplinked-accordion">
 			<?php

@@ -95,7 +95,7 @@ Template Name: Front
 				</div>
 
 			<?php endwhile; endif; wp_reset_postdata(); ?>
-
+			<a href="testimonials" class="button know-more">More Testimonials</a>
 		</div>
 	</section>
 
@@ -138,7 +138,7 @@ Template Name: Front
 				endwhile;
 				wp_reset_query();
 			 ?>
-
+			 <a href="articles-news" class="button know-more">More News</a>
 			</div><!--new wrapper-->
 		</div>
 	</section>

@@ -6,9 +6,13 @@
 
 <?php get_header( 'front' ); ?>
 
-<!--<?php get_template_part( 'template-parts/featured-image' ); ?>-->
+<div class="page-head section-header">
+  <span class="sub-title">Hundreds of Happy Students</span>
+  <h3 class="title">Testimonials</h3>
+</div>
+
 <div class="main-container">
-	<div class="news-wrapper">
+	<div class="testimonials-wrapper">
 		<main class="main-content">
 
       <div class="testimonials grid-container">
@@ -39,7 +43,7 @@
                     <span class="quote-icon"><i class="fa fa-quote-right"></i></span>
                     <h3><?php the_title() ?></h3>
 
-                    <?php the_excerpt(); ?>
+                    <?php the_content(); ?>
 
                   </div><!--quoteblock -->
                 </div>

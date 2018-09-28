@@ -32,8 +32,8 @@
              ?>
 
              <article class="post-wrapper">
-               <?php //the_post_thumbnail(); ?>
-               <img src="https://picsum.photos/600/150/?random" alt="">
+               <?php the_post_thumbnail('post_featured'); ?>
+               <!--<img src="https://picsum.photos/600/150/?random" alt="">-->
                <header>
                  <h4 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                  <div class="postmeta">By: <span class="author"><?php the_author(); ?></span></div>
@@ -100,8 +100,8 @@
            ?>
 
            <article class="cell medium-4 blog-item">
-             <?php //the_post_thumbnail(); ?>
-             <img src="https://picsum.photos/350/150/?random" alt="">
+             <?php the_post_thumbnail('post_grid'); ?>
+             <!--<img src="https://picsum.photos/350/150/?random" alt="">-->
              <h4 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
              <div class="postmeta">
                By: <span class="post-author"><?php the_author(); ?></span>
@@ -116,9 +116,7 @@
           wp_reset_query();
          ?>
 
-         <?php if (function_exists("edu_pagination")) {
-             edu_pagination($loop_listing->max_num_pages);
-         } ?>
+        <a href="articles-news" class="button know-more">More News</a>
 
         </div>
       </section>
