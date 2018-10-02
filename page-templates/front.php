@@ -52,7 +52,7 @@ Template Name: Front
 					Reliable and Experience
 				</h2>
 				<p>We are a dependable professional services consultancy, providing reliable services to international medical students looking for accessible study abroad opportunities.</p>
-				<a href="" class="button">Read more</a>
+				<a href="about-us" class="button">Read more</a>
 			</div>
 		</div>
 	</section>
