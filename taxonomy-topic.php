@@ -61,10 +61,8 @@ get_header('front'); ?>
 		?>
 
 		</main>
-		<aside class="sidebar">
-			<?php get_template_part( 'template-parts/blocks/faq-topics-widget'); ?>
-		</aside>
-		<?php //get_sidebar(); ?>
+
+		<?php get_sidebar(); ?>
 
 	</div>
 </div>

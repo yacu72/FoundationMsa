@@ -17,39 +17,33 @@ get_header('front'); ?>
 				<?php //get_template_part( 'template-parts/content', 'page' ); ?>
 			<?php endwhile; ?>
 				<ul class="accordion" data-allow-all-closed="true" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" id="deeplinked-accordion">
-			<?php
-				global $wpdb;
+					<?php
+						global $wpdb;
 
-				$args = array(
-					'post_type' => 'hrf_faq',
-				);
+						$args = array(
+							'post_type' => 'hrf_faq',
+						);
 
-				$faqs = new WP_Query( $args );
-				$i = 0;
+						$faqs = new WP_Query( $args );
+						$i = 0;
 
-				while($faqs->have_posts()) : $faqs->the_post();
+						while($faqs->have_posts()) : $faqs->the_post();
 
-			 ?>
-			 <li class="accordion-item " data-accordion-item>
-				 <a href="#deeplink <?php $i; ?> " class="accordion-title"><h5><?php the_title(); ?></h5></a>
-				 <div class="accordion-content" data-tab-content id="deeplink1">
-					 <?php the_content(); ?>
-				 </div>
-			 </li>
-		 <?php $i++; endwhile; wp_reset_postdata(); ?>
-	 </ul>
+					 ?>
+						 <li class="accordion-item " data-accordion-item>
+							 <a href="#deeplink <?php $i; ?> " class="accordion-title"><h5><?php the_title(); ?></h5></a>
+							 <div class="accordion-content" data-tab-content id="deeplink1">
+								 <?php the_content(); ?>
+							 </div>
+						 </li>
+		 		 	 <?php $i++; endwhile; wp_reset_postdata(); ?>
+ 		 		 </ul>
+			 </main>
 
+			 <?php get_sidebar(); ?>
 
+		</div><!-- main-content -->
+	</div><!-- main-grid -->
+</div><!-- page-head-faq -->
 
-
-
-		</main>
-		<aside class="sidebar">
-			<?php get_template_part( 'template-parts/blocks/faq-topics-widget'); ?>
-		</aside>
-		<?php //get_sidebar(); ?>
-
-	</div>
-</div>
-<?php
-get_footer();
+<?php get_footer(); ?>
